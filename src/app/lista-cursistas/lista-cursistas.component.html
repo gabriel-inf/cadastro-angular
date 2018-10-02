@@ -1,0 +1,12 @@
+<mat-grid-list cols="1">
+    <mat-grid-tile *ngFor="let c of cursistas">
+      <app-cards [cursista]="c"></app-cards>
+    </mat-grid-tile>  
+</mat-grid-list>
+
+<!-- <mat-list>
+    <mat-list-item *ngFor="let c of cursistas">
+        <app-cards [cursista]="c"></app-cards>
+    </mat-list-item>
+
+</mat-list> -->
