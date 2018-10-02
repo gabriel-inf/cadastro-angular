@@ -12,7 +12,7 @@ import { CardsComponent } from './cards/cards.component';
 import { ListaCursistasComponent } from './lista-cursistas/lista-cursistas.component';
 import {LayoutModule} from '@angular/cdk/layout';
 import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
     BrowserAnimationsModule,
     MatButtonModule, MatCheckboxModule, MatCardModule, MatFormFieldModule, MatGridListModule, MatListModule,
     LayoutModule,
-    BreakpointObserver
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
