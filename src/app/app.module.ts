@@ -52,6 +52,7 @@ import {
   MatTooltipModule,
   MatTreeModule,
 } from '@angular/material';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -103,7 +104,7 @@ import {
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatTreeModule,
+    MatTreeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

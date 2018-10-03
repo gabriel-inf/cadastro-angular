@@ -1,36 +1,37 @@
 <mat-card>
     <div class="example-container">
         <mat-form-field>
-            <input matInput placeholder="Nome" #nome (change)="newCursista(nome)">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Descrição" formControlName="cursista.descricao">
+            <input matInput placeholder="Nome" [(value)]="cursista.nome">
         </mat-form-field>
 
+        <mat-form-field>
+                <input matInput placeholder="Foto" [(value)]="cursista.foto">
+            </mat-form-field>
+        
 
         <mat-form-field>
-            <mat-select placeholder="Paróquia" formControlName="cursista.paroquia">
-                <mat-option value="option">NSFc</mat-option>
-                <mat-option value="option">SA</mat-option>
-                <mat-option value="option">IC</mat-option>
-                <mat-option value="option">SP</mat-option>
-                <mat-option value="option">NSCAR</mat-option>
-                <mat-option value="option">SMG</mat-option>
-                <mat-option value="option">NSAe</mat-option>
-                <mat-option value="option">PIO</mat-option>
-                <mat-option value="option">NSG</mat-option>
-                <mat-option value="option">SV</mat-option>
-                <mat-option value="option">ES</mat-option>
-                <mat-option value="option">NSC</mat-option>
-                <mat-option value="option">SSC</mat-option>
-                <mat-option value="option">SL</mat-option>
-                <mat-option value="option">NSAc</mat-option>
-                <mat-option value="option">SI</mat-option>
-                <mat-option value="option">SAMC</mat-option>
-                <mat-option value="option">ICM</mat-option>
-                <mat-option value="option">SCJ</mat-option>
-                <mat-option value="option">NSFs</mat-option>
-                <mat-option value="option">Option</mat-option>
+            <mat-select placeholder="Paróquia" #paroquiaField [(value)]="cursista.paroquia">
+                <mat-option value="NSFc">NSFc</mat-option>
+                <mat-option value="SA">SA</mat-option>
+                <mat-option value="IC">IC</mat-option>
+                <mat-option value="SP">SP</mat-option>
+                <mat-option value="NSCAR">NSCAR</mat-option>
+                <mat-option value="SMG">SMG</mat-option>
+                <mat-option value="NSAe">NSAe</mat-option>
+                <mat-option value="PIO">PIO</mat-option>
+                <mat-option value="NSG">NSG</mat-option>
+                <mat-option value="SV">SV</mat-option>
+                <mat-option value="ES">ES</mat-option>
+                <mat-option value="NSC">NSC</mat-option>
+                <mat-option value="SSC">SSC</mat-option>
+                <mat-option value="SL">SL</mat-option>
+                <mat-option value="NSAc">NSAc</mat-option>
+                <mat-option value="SI">SI</mat-option>
+                <mat-option value="SAMC">SAMC</mat-option>
+                <mat-option value="ICM">ICM</mat-option>
+                <mat-option value="SCJ">SCJ</mat-option>
+                <mat-option value="NSFs">NSFs</mat-option>
+                <mat-option value="Falta">Falta</mat-option>
 
             </mat-select>
         </mat-form-field>
@@ -44,8 +45,8 @@
 
         <div class="button-row">
   
-            <button mat-mini-fab color="primary" (click)=teste()>
-                <mat-icon aria-label="Example icon-button with a heart icon">edit</mat-icon>
+            <button mat-mini-fab color="primary">
+                <mat-icon aria-label="Example icon-button with a heart icon" (click)="create()">done</mat-icon>
             </button>
         
         </div>

@@ -11,5 +11,20 @@ export class Cursista {
     ativa: boolean;
     foto: string;
     canhoto: boolean;
+
+
+    public constructor(){
+        this.nome= ""; 
+        this.paroquia= "";
+        this.cpf= "";
+        this.tamanhoCamisa= "";
+        this.quarto= "";
+        this.onibus= 0;
+        this.descricao= "";
+        this.sexo= ""; 
+        this.ativa= true;
+        this.foto= "";
+        this.canhoto= false;
+    }
     
 }

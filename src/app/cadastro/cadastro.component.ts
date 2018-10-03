@@ -8,21 +8,35 @@ import { Cursista } from 'src/app/cursista';
 })
 export class CadastroComponent implements OnInit {
 
-
+  
   cursista: Cursista;
 
 
-  constructor() { }
+  constructor() { 
+    this.cursista = new Cursista();
+  }
 
   ngOnInit() {
   }
 
-  newCursista(nome){
+  formNome(nome){
     this.cursista.nome = nome;
+    console.log( this.cursista.nome)
   }
 
-  teste(){
+  formParoquia(par){
+    this.cursista.paroquia= par;
+    console.log( par)
+  }
+
+  formDescricao(desc){
+    this.cursista.descricao= desc;
+    console.log(this.cursista.descricao)
+  }
+
+  create(){
     alert(this.cursista.nome);
+    alert(this.cursista.paroquia);
   }
 
 }
