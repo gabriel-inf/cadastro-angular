@@ -1,0 +1,55 @@
+<mat-card>
+    <div class="example-container">
+        <mat-form-field>
+            <input matInput placeholder="Nome" #nome (change)="newCursista(nome)">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Descrição" formControlName="cursista.descricao">
+        </mat-form-field>
+
+
+        <mat-form-field>
+            <mat-select placeholder="Paróquia" formControlName="cursista.paroquia">
+                <mat-option value="option">NSFc</mat-option>
+                <mat-option value="option">SA</mat-option>
+                <mat-option value="option">IC</mat-option>
+                <mat-option value="option">SP</mat-option>
+                <mat-option value="option">NSCAR</mat-option>
+                <mat-option value="option">SMG</mat-option>
+                <mat-option value="option">NSAe</mat-option>
+                <mat-option value="option">PIO</mat-option>
+                <mat-option value="option">NSG</mat-option>
+                <mat-option value="option">SV</mat-option>
+                <mat-option value="option">ES</mat-option>
+                <mat-option value="option">NSC</mat-option>
+                <mat-option value="option">SSC</mat-option>
+                <mat-option value="option">SL</mat-option>
+                <mat-option value="option">NSAc</mat-option>
+                <mat-option value="option">SI</mat-option>
+                <mat-option value="option">SAMC</mat-option>
+                <mat-option value="option">ICM</mat-option>
+                <mat-option value="option">SCJ</mat-option>
+                <mat-option value="option">NSFs</mat-option>
+                <mat-option value="option">Option</mat-option>
+
+            </mat-select>
+        </mat-form-field>
+
+        <mat-radio-group>
+            <mat-radio-button value="1">Menino</mat-radio-button>
+            <mat-radio-button value="2" style="margin-left: 8px;">Menina</mat-radio-button>
+        </mat-radio-group>
+
+        <br>
+
+        <div class="button-row">
+  
+            <button mat-mini-fab color="primary" (click)=teste()>
+                <mat-icon aria-label="Example icon-button with a heart icon">edit</mat-icon>
+            </button>
+        
+        </div>
+
+
+    </div>
+</mat-card>
