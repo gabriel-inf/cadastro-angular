@@ -53,6 +53,7 @@ import {
   MatTreeModule,
 } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MyNavComponent } from './my-nav/my-nav.component';
 
 
 @NgModule({
@@ -60,7 +61,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     CadastroComponent,
     CardsComponent,
-    ListaCursistasComponent
+    ListaCursistasComponent,
+    MyNavComponent
   ],
   imports: [
     BrowserModule,

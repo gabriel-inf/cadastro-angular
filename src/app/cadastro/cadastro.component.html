@@ -1,11 +1,11 @@
 <mat-card>
     <div class="example-container">
         <mat-form-field>
-            <input matInput placeholder="Nome" [(value)]="cursista.nome">
+            <input matInput placeholder="Nome" #nomeField (keyup)="formNome(nomeField.value)">
         </mat-form-field>
 
         <mat-form-field>
-                <input matInput placeholder="Foto" [(value)]="cursista.foto">
+                <input matInput placeholder="Foto" #nomeField (keyup)="formNome(nomeField.value)">
             </mat-form-field>
         
 
