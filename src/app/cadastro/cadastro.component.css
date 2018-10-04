@@ -15,3 +15,36 @@
 .button-row a {
   margin-right: 8px;
 }
+
+.twoFields_first{
+  width: 48%;
+}
+
+.twoFields_second{
+  margin-left: 8px;
+  width: 48%;
+}
+
+.firstFields_second{
+  margin-left: 8px;
+  width: 30%;
+}
+
+.threeFields_second{
+  margin-left: 20px;
+  width: 30%;
+}
+
+
+.example-radio-group {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.example-radio-button {
+  margin: 5px;
+}
+
+.example-selected-value {
+  margin: 15px 0;
+}

@@ -51,8 +51,9 @@ import {
   MatToolbarModule,
   MatTooltipModule,
   MatTreeModule,
+
 } from '@angular/material';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MyNavComponent } from './my-nav/my-nav.component';
 
 
@@ -106,7 +107,8 @@ import { MyNavComponent } from './my-nav/my-nav.component';
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatTreeModule
+    MatTreeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

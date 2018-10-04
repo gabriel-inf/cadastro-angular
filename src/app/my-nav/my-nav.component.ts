@@ -10,6 +10,14 @@ import { map } from 'rxjs/operators';
 })
 export class MyNavComponent {
 
+
+  comunidades = [
+
+    "Árvore", "Chuva", "Estrela", "Fruto", "Lua", "Mar", "Nuvem", "Sol",
+    "Flor", "Terra", "Ar"
+
+  ]
+
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches)

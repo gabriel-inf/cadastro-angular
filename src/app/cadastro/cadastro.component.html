@@ -1,90 +1,106 @@
 <mat-card>
     <div class="example-container">
-        <mat-form-field>
-            <input matInput placeholder="Nome" #nomeField (keyup)="formNome(nomeField.value)">
-        </mat-form-field>
+        <form class="formwidth" (ngSubmit)="onSubmit(cadastroForm)" #cadastroForm="ngForm">
 
-        <mat-form-field>
-            <input matInput placeholder="CPF" #cpf (keyup)="formCpf(cpf.value)">
-        </mat-form-field>
+            <div>
+                <mat-form-field class="twoFields_first">
+                    <input matInput placeholder="Nome" #nomeField [(ngModel)]="cursista.nome" name="nome">
+                </mat-form-field>
 
-        <mat-form-field>
-            <input matInput placeholder="Foto" #fotoField (keyup)="formFoto(fotoField.value)">
-        </mat-form-field>
+                <mat-form-field class="twoFields_second">
+                    <input matInput placeholder="CPF" [(ngModel)]="cursista.cpf" required name="cpf">
+                </mat-form-field>
+            </div>
 
-        <mat-form-field>
-            <mat-select placeholder="Tam. Camiseta" #paroquiaField [(value)]="cursista.camisa">
-                <mat-option value="PP">PP</mat-option>
-                <mat-option value="P">P</mat-option>
-                <mat-option value="M">M</mat-option>
-                <mat-option value="G">G</mat-option>
-                <mat-option value="GG">GG</mat-option>
-                <mat-option value="XG">XG</mat-option>
-            </mat-select>
-        </mat-form-field>
+            <div>
+                <mat-form-field class="twoFields_first">
+                    <input matInput placeholder="Quarto" [(ngModel)]="cursista.quarto" required name="quarto">
+                </mat-form-field>
 
+                <mat-form-field class="twoFields_second">
+                    <input matInput placeholder="Foto" [(ngModel)]="cursista.foto" required name="foto">
+                </mat-form-field>
+            </div>
 
 
+            <div>
+                <mat-form-field class="firstFields_second">
+                    <mat-select placeholder="Paróquia" [(value)]="cursista.paroquia">
+                        <mat-option value="NSFc">NSFc</mat-option>
+                        <mat-option value="SA">SA</mat-option>
+                        <mat-option value="IC">IC</mat-option>
+                        <mat-option value="SP">SP</mat-option>
+                        <mat-option value="NSCAR">NSCAR</mat-option>
+                        <mat-option value="SMG">SMG</mat-option>
+                        <mat-option value="NSAe">NSAe</mat-option>
+                        <mat-option value="PIO">PIO</mat-option>
+                        <mat-option value="NSG">NSG</mat-option>
+                        <mat-option value="SV">SV</mat-option>
+                        <mat-option value="ES">ES</mat-option>
+                        <mat-option value="NSC">NSC</mat-option>
+                        <mat-option value="SSC">SSC</mat-option>
+                        <mat-option value="SL">SL</mat-option>
+                        <mat-option value="NSAc">NSAc</mat-option>
+                        <mat-option value="SI">SI</mat-option>
+                        <mat-option value="SAMC">SAMC</mat-option>
+                        <mat-option value="ICM">ICM</mat-option>
+                        <mat-option value="SCJ">SCJ</mat-option>
+                        <mat-option value="NSFs">NSFs</mat-option>
+                        <mat-option value="Falta">SR</mat-option>
+                    </mat-select>
+                </mat-form-field>
 
-        <mat-form-field>
-            <mat-select placeholder="Onibus" #paroquiaField [(value)]="cursista.onibus">
-                <mat-option value="2">2</mat-option>
-                <mat-option value="3">3</mat-option>
-            </mat-select>
-        </mat-form-field>
+                <mat-form-field class="threeFields_second">
+                    <mat-select placeholder="Tam. Camiseta" [(value)]="cursista.tamanhoCamisa">
+                        <mat-option value="PP">PP</mat-option>
+                        <mat-option value="P">P</mat-option>
+                        <mat-option value="M">M</mat-option>
+                        <mat-option value="G">G</mat-option>
+                        <mat-option value="GG">GG</mat-option>
+                        <mat-option value="XG">XG</mat-option>
+                    </mat-select>
+                </mat-form-field>
 
-        <mat-divider></mat-divider>
-        
-        <mat-form-field>
-            <textarea matInput placeholder="Descrição" #desc (keyup)="formDescricao(desc.value)"> </textarea>
-        </mat-form-field>
+                <mat-form-field class="threeFields_second">
+                    <mat-select placeholder="Ônibus" [(value)]="cursista.onibus">
+                        <mat-option value="2">2</mat-option>
+                        <mat-option value="3">3</mat-option>
+                    </mat-select>
+                </mat-form-field>
 
+            </div>
 
+            <br>
 
-        <mat-form-field>
-            <mat-select placeholder="Paróquia" #paroquiaField [(value)]="cursista.paroquia">
-                <mat-option value="NSFc">NSFc</mat-option>
-                <mat-option value="SA">SA</mat-option>
-                <mat-option value="IC">IC</mat-option>
-                <mat-option value="SP">SP</mat-option>
-                <mat-option value="NSCAR">NSCAR</mat-option>
-                <mat-option value="SMG">SMG</mat-option>
-                <mat-option value="NSAe">NSAe</mat-option>
-                <mat-option value="PIO">PIO</mat-option>
-                <mat-option value="NSG">NSG</mat-option>
-                <mat-option value="SV">SV</mat-option>
-                <mat-option value="ES">ES</mat-option>
-                <mat-option value="NSC">NSC</mat-option>
-                <mat-option value="SSC">SSC</mat-option>
-                <mat-option value="SL">SL</mat-option>
-                <mat-option value="NSAc">NSAc</mat-option>
-                <mat-option value="SI">SI</mat-option>
-                <mat-option value="SAMC">SAMC</mat-option>
-                <mat-option value="ICM">ICM</mat-option>
-                <mat-option value="SCJ">SCJ</mat-option>
-                <mat-option value="NSFs">NSFs</mat-option>
-                <mat-option value="Falta">SR</mat-option>
-            </mat-select>
-        </mat-form-field>
-
-        <mat-radio-group>
-            <mat-radio-button value="M">Menino</mat-radio-button>
-            <mat-radio-button value="F" style="margin-left: 8px;">Menina</mat-radio-button>
-        </mat-radio-group>
-
-        <mat-slide-toggle style="margin-top: 8px;">Canhoto</mat-slide-toggle>
-
-
-        <br>
-
-        <div class="button-row">
-
-            <button mat-mini-fab color="primary">
-                <mat-icon aria-label="Example icon-button with a heart icon" (click)="create()">done</mat-icon>
-            </button>
-
-        </div>
+            <div>
+                <mat-form-field class="example-container">
+                    <textarea matInput placeholder="Descrição" [(ngModel)]="cursista.descricao" name="descricao"> </textarea>
+                </mat-form-field>
+            </div>
 
 
+
+
+
+            <div>
+                <mat-radio-group [(ngModel)]="cursista.sexo" name=sexo>
+                    <mat-radio-button color="primary" value="s" *ngFor="let s of sexos">{{s}}</mat-radio-button>
+                </mat-radio-group>
+            </div>
+
+            <br>
+
+            <mat-slide-toggle color="primary" [checked]="cursista.canhoto" style="margin-top: 8px;">Canhoto</mat-slide-toggle>
+
+
+            <br>
+            <br>
+
+            <div class="button-row">
+                <button mat-mini-fab color="primary">
+                    <mat-icon type="submit" aria-label="Example icon-button with a heart icon">done</mat-icon>
+                </button>
+            </div>
+        </form>
     </div>
 </mat-card>
