@@ -30,13 +30,14 @@ export class CadastroComponent implements OnInit {
   }
 
   formDescricao(desc){
-    this.cursista.descricao= desc;
-    console.log(this.cursista.descricao)
+    this.cursista.descricao=desc;
+    console.log(this.cursista.descricao);
+
+
   }
 
   create(){
-    alert(this.cursista.nome);
-    alert(this.cursista.paroquia);
+    
   }
 
 }
