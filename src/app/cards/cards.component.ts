@@ -15,8 +15,13 @@ export class CardsComponent implements OnInit {
 
 
 
+
   }
 
+
+  teste(){
+    
+  }
   ngOnInit() {
     
   }

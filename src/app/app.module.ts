@@ -14,7 +14,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { CdkTableModule } from '@angular/cdk/table';
 import { CdkTreeModule } from '@angular/cdk/tree';
 
-
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -55,7 +54,9 @@ import {
 } from '@angular/material';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MyNavComponent } from './my-nav/my-nav.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { ApiService } from './api.service';
 
 @NgModule({
   declarations: [
@@ -108,9 +109,21 @@ import { MyNavComponent } from './my-nav/my-nav.component';
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+
+  constructor(private apiService: ApiService){
+    setInterval(() =>{
+      apiService.updateConnection();
+      console.log("Chamada!");
+    }, 60000)
+  }
+
+}

@@ -8,7 +8,7 @@
                 </mat-form-field>
 
                 <mat-form-field class="twoFields_second">
-                    <input matInput placeholder="CPF" [(ngModel)]="cursista.cpf" required name="cpf">
+                    <input matInput placeholder="RG" [(ngModel)]="cursista.rg" required name="rg">
                 </mat-form-field>
             </div>
 
@@ -20,6 +20,35 @@
                 <mat-form-field class="twoFields_second">
                     <input matInput placeholder="Foto" [(ngModel)]="cursista.foto" required name="foto">
                 </mat-form-field>
+
+                <mat-form-field class="firstFields_second">
+                    <mat-select placeholder="Comunidade" [(value)]="cursista.comunidade">
+                        <mat-option value="NSFc" *ngFor="let comunidade of "></mat-option>
+                        <mat-option value="SA">SA</mat-option>
+                        <mat-option value="IC">IC</mat-option>
+                        <mat-option value="SP">SP</mat-option>
+                        <mat-option value="NSCAR">NSCAR</mat-option>
+                        <mat-option value="SMG">SMG</mat-option>
+                        <mat-option value="NSAe">NSAe</mat-option>
+                        <mat-option value="PIO">PIO</mat-option>
+                        <mat-option value="NSG">NSG</mat-option>
+                        <mat-option value="SV">SV</mat-option>
+                        <mat-option value="ES">ES</mat-option>
+                        <mat-option value="NSC">NSC</mat-option>
+                        <mat-option value="SSC">SSC</mat-option>
+                        <mat-option value="SL">SL</mat-option>
+                        <mat-option value="NSAc">NSAc</mat-option>
+                        <mat-option value="SI">SI</mat-option>
+                        <mat-option value="SAMC">SAMC</mat-option>
+                        <mat-option value="ICM">ICM</mat-option>
+                        <mat-option value="SCJ">SCJ</mat-option>
+                        <mat-option value="NSFs">NSFs</mat-option>
+                        <mat-option value="Falta">SR</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+
+
             </div>
 
 
@@ -84,23 +113,40 @@
 
             <div>
                 <mat-radio-group [(ngModel)]="cursista.sexo" name=sexo>
-                    <mat-radio-button color="primary" value="s" *ngFor="let s of sexos">{{s}}</mat-radio-button>
+                    <mat-radio-button color="primary" value="M">Masculino</mat-radio-button>
+                    <mat-radio-button color="primary" value="F">Feminino</mat-radio-button>
                 </mat-radio-group>
             </div>
 
             <br>
 
-            <mat-slide-toggle color="primary" [checked]="cursista.canhoto" style="margin-top: 8px;">Canhoto</mat-slide-toggle>
+            <section class="example-section">
+                <mat-slide-toggle class="example-margin" [(ngModel)]="cursista.canhoto" name="btCanhoto">
+                    Canhoto
+                </mat-slide-toggle>
+            </section>
+
 
 
             <br>
             <br>
 
-            <div class="button-row">
-                <button mat-mini-fab color="primary">
-                    <mat-icon type="submit" aria-label="Example icon-button with a heart icon">done</mat-icon>
-                </button>
-            </div>
+            <mat-card-actions>
+                <div class="button-row">
+                    <button mat-mini-fab color="primary">
+                        <mat-icon type="submit" aria-label="Example icon-button with a heart icon">done</mat-icon>
+                    </button>
+                </div>
+            </mat-card-actions>
+            <mat-card-actions>
+                <div class="button-row">
+                    <button mat-mini-fab color="primary">
+                        <mat-icon type="submit" aria-label="Example icon-button with a heart icon">done</mat-icon>
+                    </button>
+                </div>
+            </mat-card-actions>
+
+
         </form>
     </div>
 </mat-card>

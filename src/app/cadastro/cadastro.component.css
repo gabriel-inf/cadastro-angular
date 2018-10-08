@@ -48,3 +48,7 @@
 .example-selected-value {
   margin: 15px 0;
 }
+
+.mat-radio-button{
+  margin-left: 10px;
+}
