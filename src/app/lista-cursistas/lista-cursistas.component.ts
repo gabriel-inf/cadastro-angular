@@ -3,6 +3,9 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Cursista } from '../cursista';
 import { DataService } from '../data.service';
 import { ApiService } from '../api.service';
+import { Observable } from 'rxjs';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-lista-cursistas',
@@ -11,12 +14,16 @@ import { ApiService } from '../api.service';
 })
 export class ListaCursistasComponent implements OnInit {
 
+  comunidade: string;
+  c: string;
 
-  monstrar_comunidade="TODAS"
-  
+
   cursistas: any = []
 
-  constructor(apiService: ApiService) {
+  constructor(private apiService: ApiService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
     apiService.getCursistas().subscribe(
       res => {
         this.cursistas = res
@@ -24,7 +31,8 @@ export class ListaCursistasComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.cursistas)
+    this.comunidade = this.route.snapshot.paramMap.get('comunidade');
+    alert(this.comunidade)
   }
 
 }

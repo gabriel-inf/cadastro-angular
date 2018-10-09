@@ -23,27 +23,8 @@
 
                 <mat-form-field class="firstFields_second">
                     <mat-select placeholder="Comunidade" [(value)]="cursista.comunidade">
-                        <mat-option value="NSFc" *ngFor="let comunidade of "></mat-option>
-                        <mat-option value="SA">SA</mat-option>
-                        <mat-option value="IC">IC</mat-option>
-                        <mat-option value="SP">SP</mat-option>
-                        <mat-option value="NSCAR">NSCAR</mat-option>
-                        <mat-option value="SMG">SMG</mat-option>
-                        <mat-option value="NSAe">NSAe</mat-option>
-                        <mat-option value="PIO">PIO</mat-option>
-                        <mat-option value="NSG">NSG</mat-option>
-                        <mat-option value="SV">SV</mat-option>
-                        <mat-option value="ES">ES</mat-option>
-                        <mat-option value="NSC">NSC</mat-option>
-                        <mat-option value="SSC">SSC</mat-option>
-                        <mat-option value="SL">SL</mat-option>
-                        <mat-option value="NSAc">NSAc</mat-option>
-                        <mat-option value="SI">SI</mat-option>
-                        <mat-option value="SAMC">SAMC</mat-option>
-                        <mat-option value="ICM">ICM</mat-option>
-                        <mat-option value="SCJ">SCJ</mat-option>
-                        <mat-option value="NSFs">NSFs</mat-option>
-                        <mat-option value="Falta">SR</mat-option>
+                        <mat-option value="comudade_refs[i]" *ngFor="let comunidade of comunidades; let i = index">{{comunidade}}</mat-option>
+                      
                     </mat-select>
                 </mat-form-field>
 

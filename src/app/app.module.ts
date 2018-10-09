@@ -13,6 +13,8 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CdkTableModule } from '@angular/cdk/table';
 import { CdkTreeModule } from '@angular/cdk/tree';
+import { RouterModule, Routes } from '@angular/router';
+
 
 import {
   MatAutocompleteModule,
@@ -57,6 +59,14 @@ import { MyNavComponent } from './my-nav/my-nav.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { ApiService } from './api.service';
+
+
+const appRoutes: Routes = [
+
+  {path: 'cadastro', component: CadastroComponent},
+  {path: 'lista-cursistas/:comunidade', component: ListaCursistasComponent},
+
+];
 
 @NgModule({
   declarations: [
@@ -111,7 +121,11 @@ import { ApiService } from './api.service';
     MatTreeModule,
     FormsModule,
     HttpClientModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true} // <- for debugging
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]

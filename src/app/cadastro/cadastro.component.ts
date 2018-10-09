@@ -17,10 +17,28 @@ export class CadastroComponent implements OnInit {
   
   color = 'accent';
   button: boolean;
+
+  comunidades = [
+
+    "Árvore", "Chuva", "Estrela", "Fruto", "Lua", "Mar", "Nuvem", "Sol",
+    "Flor", "Terra", "Ar"
+
+  ]
+
+  comunidade_refs = []
   
 
   constructor(private apiService: ApiService, private toastr: ToastrService) {
     this.cursista = new Cursista();
+
+    let i = 0;
+    this.comunidades.forEach(c => {
+      this.comunidade_refs.push(this.comunidades[i].normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase())
+      i = i + 1;
+    });
+    
+
+
   }
 
   ngOnInit() {

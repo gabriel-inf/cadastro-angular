@@ -18,11 +18,24 @@ export class MyNavComponent {
 
   ]
 
+
+  comunidade_refs = []
+
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches)
     );
     
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver) {
+
+    let i = 0;
+    this.comunidades.forEach(c => {
+      this.comunidade_refs.push(this.comunidades[i].normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase())
+      i = i + 1;
+    });
+    
+  }
   
+    
+
   }
