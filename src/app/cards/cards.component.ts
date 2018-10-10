@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Cursista } from '../cursista';
 
 @Component({
   selector: 'app-cards',
@@ -8,22 +9,22 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CardsComponent implements OnInit {
 
   @Input()
-  cursista: any;
+  cursista: Cursista;
 
-  constructor() { 
+  masc = "masc";
 
-
-
-
-
+  constructor() {
   }
 
 
-  teste(){
-    
+  teste() {
+
   }
   ngOnInit() {
-    
+    if (this.cursista) {
+      if (this.cursista.sexo.toLowerCase() == "f") {
+        this.masc = "fem";
+      }
+    }
   }
-
 }

@@ -1,6 +1,7 @@
-<mat-card class="example-card">
+<mat-card class="example-card" color="dark-primary">
   <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
+    
+    <div [id]="masc" mat-card-avatar></div>
     <mat-card-title>{{cursista.nome}}</mat-card-title>
     <mat-card-subtitle>
       <mat-chip-list>
@@ -25,9 +26,9 @@
     </mat-accordion>
   </mat-card-content>
   <mat-card-actions>
-    <div class="button-row">-
+    <div class="button-row">
       <button mat-mini-fab color="primary" (click)=teste()>
-        <mat-icon aria-label="Example icon-button with a heart icon">edit</mat-icon>
+        <mat-icon aria-label="Editar">edit</mat-icon>
       </button>
     </div>
   </mat-card-actions>

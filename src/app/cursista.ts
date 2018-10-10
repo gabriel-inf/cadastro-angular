@@ -22,7 +22,7 @@ export class Cursista {
         this.quarto = ""; //
         this.onibus = 0; //
         this.descricao = ""; //
-        this.sexo = ""; //
+        this.sexo = "f"; //
         this.ativa = true;
         this.foto = "";
         this.canhoto = false;

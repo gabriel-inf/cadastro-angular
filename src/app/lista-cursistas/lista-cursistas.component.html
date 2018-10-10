@@ -1,14 +1,15 @@
 <div style="height: 50px;"></div>
 
+<h1>
+    
+</h1>
+
 <div class="container">
     <div class="row">
-        <div class="col" *ngFor="let c of cursistas">
-            <div *ngIf="c.comunidade == comunidade">
-                <mat-card class="card-picture">
-                    <app-cards [cursista]="c"></app-cards>
-                </mat-card>
+        <div class="col" *ngFor="let c of data.cursistas">
+            <div style="margin-bottom: 20px;">
+                <app-cards [cursista]="c"></app-cards>
             </div>
-
         </div>
     </div>
 </div>

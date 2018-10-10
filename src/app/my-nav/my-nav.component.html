@@ -10,6 +10,7 @@
     <mat-nav-list>
       <div *ngFor="let comunidade of comunidades; let i = index">
           <a mat-list-item  routerLink="/lista-cursistas/{{comunidade_refs[i]}}" routerLinkActive="active">{{comunidade}}</a>
+          <mat-divider></mat-divider>
       </div>
       
       <a mat-list-item routerLink="/table">Table</a>

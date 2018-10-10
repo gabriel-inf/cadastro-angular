@@ -11,3 +11,14 @@
   mat-chip{
     max-width: 100px;
   }
+
+
+#fem{
+  background-color: #e0115f!important;
+  background-size: cover!important;
+}
+
+#masc{
+  background-color: #27aee3!important;
+  background-size: cover!important;
+}

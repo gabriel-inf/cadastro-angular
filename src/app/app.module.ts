@@ -8,7 +8,7 @@ import 'hammerjs';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CardsComponent } from './cards/cards.component';
-import { ListaCursistasComponent } from './lista-cursistas/lista-cursistas.component';
+import { ListaCursistasComponent, UnidecodePipe } from './lista-cursistas/lista-cursistas.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CdkTableModule } from '@angular/cdk/table';
@@ -126,8 +126,9 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true} // <- for debugging
     )
+    
   ],
-  providers: [],
+  providers: [ApiService, UnidecodePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
