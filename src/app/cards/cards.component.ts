@@ -13,6 +13,8 @@ export class CardsComponent implements OnInit {
 
   masc = "masc";
 
+  itens_descricao: Array<String> = []; 
+
   constructor() {
   }
 
@@ -26,5 +28,8 @@ export class CardsComponent implements OnInit {
         this.masc = "fem";
       }
     }
+
+    this.itens_descricao = this.cursista.descricao.split(";");
+
   }
 }

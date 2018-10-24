@@ -21,7 +21,6 @@ export class ListaCursistasComponent implements OnInit {
 
   comunidade: string;
 
-
   cursistas: any = []
 
   constructor(private apiService: ApiService,

@@ -19,8 +19,8 @@
           </mat-panel-title>
 
         </mat-expansion-panel-header>
-        <p>
-          {{ cursista.descricao }}
+        <p *ngFor="let item of itens_descricao">
+            <mat-icon aria-label="info">info</mat-icon> {{ item }}
         </p>
       </mat-expansion-panel>
     </mat-accordion>
