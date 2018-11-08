@@ -31,5 +31,11 @@ export class ApiService {
     let path = this.url+"/connection"
     return this.http.get(path);
   }
+
+  public getCursistasPerComunity(comunidade: string): Observable<any>{
+    let path = this.url+"/cursista/comunidade/"+comunidade;
+    return this.http.get<Array<Cursista>>(path);
+  }
+
   
 }

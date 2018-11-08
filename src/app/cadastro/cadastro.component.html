@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card *ngIf="cursista">
     <div class="example-container">
         <form class="formwidth" (ngSubmit)="onSubmit(cadastroForm)" #cadastroForm="ngForm">
 
@@ -36,27 +36,7 @@
             <div>
                 <mat-form-field class="firstFields_second">
                     <mat-select placeholder="Paróquia" [(value)]="cursista.paroquia">
-                        <mat-option value="NSFc">NSFc</mat-option>
-                        <mat-option value="SA">SA</mat-option>
-                        <mat-option value="IC">IC</mat-option>
-                        <mat-option value="SP">SP</mat-option>
-                        <mat-option value="NSCAR">NSCAR</mat-option>
-                        <mat-option value="SMG">SMG</mat-option>
-                        <mat-option value="NSAe">NSAe</mat-option>
-                        <mat-option value="PIO">PIO</mat-option>
-                        <mat-option value="NSG">NSG</mat-option>
-                        <mat-option value="SV">SV</mat-option>
-                        <mat-option value="ES">ES</mat-option>
-                        <mat-option value="NSC">NSC</mat-option>
-                        <mat-option value="SSC">SSC</mat-option>
-                        <mat-option value="SL">SL</mat-option>
-                        <mat-option value="NSAc">NSAc</mat-option>
-                        <mat-option value="SI">SI</mat-option>
-                        <mat-option value="SAMC">SAMC</mat-option>
-                        <mat-option value="ICM">ICM</mat-option>
-                        <mat-option value="SCJ">SCJ</mat-option>
-                        <mat-option value="NSFs">NSFs</mat-option>
-                        <mat-option value="Falta">SR</mat-option>
+                        <mat-option *ngFor="let paroquia of paroquias" value="paroquia">{{paroquia}}</mat-option>
                     </mat-select>
                 </mat-form-field>
 

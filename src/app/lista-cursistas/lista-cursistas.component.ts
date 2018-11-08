@@ -5,12 +5,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
  
 
-@Pipe({name: 'unidecode'})
-export class UnidecodePipe implements PipeTransform {
-  transform(value: string): string {
-      return value.normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase();
-  }
-}
+
 
 @Component({
   selector: 'app-lista-cursistas',

@@ -12,9 +12,10 @@ export class Cursista {
     foto: string; //
     canhoto: boolean; //
     comunidade: string;
-
+    id: number;
 
     public constructor() {
+
         this.nome = ""; //
         this.paroquia = ""; //
         this.rg = ""; //
@@ -27,6 +28,7 @@ export class Cursista {
         this.foto = "";
         this.canhoto = false;
         this.comunidade = "";
+        this.id=0;
     }
 
 }

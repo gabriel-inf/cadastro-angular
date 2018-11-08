@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Cursista } from '../cursista';
+import { DataService } from '../data.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-cards',
@@ -15,7 +17,7 @@ export class CardsComponent implements OnInit {
 
   itens_descricao: Array<String> = []; 
 
-  constructor() {
+  constructor(private data: DataService, private router: Router, private route: ActivatedRoute) {
   }
 
 
@@ -28,8 +30,13 @@ export class CardsComponent implements OnInit {
         this.masc = "fem";
       }
     }
-
-    this.itens_descricao = this.cursista.descricao.split(";");
-
+    this.itens_descricao = this.cursista.descricao.split("#");
   }
+
+  edit(c: Cursista){
+    this.data.selectCursista(c);
+    this.router.navigate([`../../cadastro/${c.id}`], { relativeTo: this.route });
+  }
+
+
 }

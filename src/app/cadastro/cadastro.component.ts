@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Cursista } from 'src/app/cursista';
 import { ApiService } from '../api.service';
 import { ToastrService } from 'ngx-toastr';
+import { ActivatedRoute, Router } from '@angular/router';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -11,37 +13,66 @@ import { ToastrService } from 'ngx-toastr';
 export class CadastroComponent implements OnInit {
 
 
+  selected_cursista_id: number;
   cursista: Cursista;
   sexo: string;
   sexos = ["menino", "menina"]
-  
+
   color = 'accent';
   button: boolean;
 
-  comunidades = [
+  comunidades = []
 
-    "Árvore", "Chuva", "Estrela", "Fruto", "Lua", "Mar", "Nuvem", "Sol",
-    "Flor", "Terra", "Ar"
+  paroquias = [
+
+    "NSFc",
+    "SA",
+    "IC",
+    "SP",
+    "NSCAR",
+    "SMG",
+    "NSAe",
+    "PIO",
+    "NSG",
+    "SV",
+    "ES",
+    "NSC",
+    "SSC",
+    "SL",
+    "NSAc",
+    "SI",
+    "SAMC",
+    "ICM",
+    "SCJ",
+    "NSFs",
+    "SR"
+
 
   ]
 
-  comunidade_refs = []
-  
-
-  constructor(private apiService: ApiService, private toastr: ToastrService) {
+  constructor(
+    private apiService: ApiService,
+    private toastr: ToastrService,
+    private route: ActivatedRoute,
+    private router: Router,
+    private data: DataService) {
     this.cursista = new Cursista();
 
-    let i = 0;
-    this.comunidades.forEach(c => {
-      this.comunidade_refs.push(this.comunidades[i].normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase())
-      i = i + 1;
-    });
-    
+    for (let index = 0; index < 12; index++) {
+      this.comunidades.push(index + 1);
+    }
+
+
+
 
 
   }
 
   ngOnInit() {
+
+    this.selected_cursista_id =  parseInt(this.route.snapshot.paramMap.get('id').toString(), 10);
+    this.cursista = this.data.getCursistaById(this.selected_cursista_id);
+
   }
 
   formNome(nome) {
@@ -65,9 +96,9 @@ export class CadastroComponent implements OnInit {
 
 
   onSubmit(form) {
-    
+
     console.log(this.cursista.canhoto);
-    
+
     this.apiService.postCursista(this.cursista).subscribe(
       res => {
         this.toastr.success(this.cursista.nome, 'Cursista cadastrado', {
@@ -76,8 +107,8 @@ export class CadastroComponent implements OnInit {
           positionClass: 'toast-top-center',
           progressAnimation: 'increasing',
           progressBar: true
-    
-    
+
+
         });
       },
       err => {
@@ -88,8 +119,8 @@ export class CadastroComponent implements OnInit {
           positionClass: 'toast-top-center',
           progressAnimation: 'increasing',
           progressBar: true
-    
-    
+
+
         });
       });
   }

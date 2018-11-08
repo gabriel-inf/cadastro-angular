@@ -11,3 +11,7 @@
   position: fixed;
   z-index: 2;
 }
+
+.example-margin {
+  margin: 10px;
+}

@@ -8,7 +8,7 @@ import 'hammerjs';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CardsComponent } from './cards/cards.component';
-import { ListaCursistasComponent, UnidecodePipe } from './lista-cursistas/lista-cursistas.component';
+import { ListaCursistasComponent } from './lista-cursistas/lista-cursistas.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CdkTableModule } from '@angular/cdk/table';
@@ -63,7 +63,7 @@ import { ApiService } from './api.service';
 
 const appRoutes: Routes = [
 
-  {path: 'cadastro', component: CadastroComponent},
+  {path: 'cadastro/:id', component: CadastroComponent},
   {path: 'lista-cursistas/:comunidade', component: ListaCursistasComponent},
 
 ];
@@ -128,7 +128,7 @@ const appRoutes: Routes = [
     )
     
   ],
-  providers: [ApiService, UnidecodePipe],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
